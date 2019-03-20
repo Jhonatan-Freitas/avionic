@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Feed</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="form-group green-border-focus">
+    <label for="exampleFormControlTextarea5"></label>
+    <textarea class="form-control" rows="3" [id]="txtPost" placeholder="Digite algo..." [(ngModel)]="txtPost"></textarea>
+  </div>
+  <button (click)="sendPost()" type="button" class="btn btn-primary mb-5">Publicar</button>
+
+    <ion-card *ngFor= "let post of posts">
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/img/marty-avatar.png">
+          </ion-avatar>
+          <h2>{{name}}</h2>
+          <p>November 5, 1955</p>
+        </ion-item>
+        <img src="assets/img/advance-card-bttf.png">
+        <ion-card-content>
+          <p>{{post}}</p>
+        </ion-card-content>
+        <ion-row>
+          <ion-col>
+            <button ion-button color="primary" clear small icon-start>
+              <ion-icon name='thumbs-up'></ion-icon>
+              12 Likes
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button color="primary" clear small icon-start>
+              <ion-icon name='text'></ion-icon>
+              4 Comentários
+            </button>
+          </ion-col>
+          <ion-col align-self-center text-center>
+            <ion-note>
+              11h ago
+            </ion-note>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+</ion-content>
